@@ -22,15 +22,15 @@ interface SuiteSwitcherProps {
 
 export function SuiteSwitcher({ activeApp }: SuiteSwitcherProps) {
   return (
-    <div className="bg-gray-50 dark:bg-slate-950 border-b border-gray-200/80 dark:border-slate-800/80 py-2 text-xs font-semibold text-gray-500 dark:text-slate-400 transition-colors duration-300">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+    <div className="global-nav bg-gray-50 dark:bg-slate-950 border-b border-gray-200/80 dark:border-slate-800/80 py-2 text-xs font-semibold text-gray-500 dark:text-slate-400 transition-colors duration-300">
+      <div className="global-nav-container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <a
           href="https://danieltibbing.github.io/"
-          className="flex items-center gap-1.5 text-gray-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors uppercase tracking-wider font-extrabold text-[10px]"
+          className="global-nav-brand flex items-center gap-1.5 text-gray-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors uppercase tracking-wider font-extrabold text-[10px]"
         >
           <span>China Suite</span>
         </a>
-        <div className="flex gap-4 overflow-x-auto select-none no-scrollbar">
+        <div className="global-nav-links flex gap-4 overflow-x-auto select-none no-scrollbar">
           {SUITE_LINKS.map(link => {
             const isActive = activeApp === link.key;
             return (
@@ -39,8 +39,8 @@ export function SuiteSwitcher({ activeApp }: SuiteSwitcherProps) {
                 href={link.url}
                 className={
                   isActive
-                    ? "text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-600 dark:border-indigo-400 pb-0.5"
-                    : "hover:text-gray-700 dark:hover:text-slate-200 transition-colors pb-0.5"
+                    ? "global-nav-link is-active text-indigo-600 dark:text-indigo-400 font-bold border-b border-indigo-600 dark:border-indigo-400 pb-0.5"
+                    : "global-nav-link hover:text-gray-700 dark:hover:text-slate-200 transition-colors pb-0.5"
                 }
               >
                 {link.label}
